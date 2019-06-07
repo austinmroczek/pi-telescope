@@ -4,6 +4,7 @@ My Raspberry Pi enabled telescope
 # Telescope
 Celestron NexStar 80GTL (model # 22085)
 
+https://www.nexstarsite.com
 
 # camera setup
 I'm using the SV105 from SVBONY.  `lsusb` reports it as `Z-Star Microelectronics Corp.`
