@@ -44,7 +44,7 @@ If you don't know your IP address do `ifconfig` and look for the "inet" for "eth
 
 Add the following line at the end
 
-`@reboot  /home/user/test.sh`
+`@reboot /home/pi/pi-telescope/check_nic.sh`
 
 
 # Wifi Access Point setup
