@@ -2,6 +2,7 @@
 
 # setup the access point
 # from https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
+# and https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/168-raspberry-pi-hotspot-access-point-dhcpcd-method
 
 apt --yes install hostapd
 

@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # setup the access point
-# from https://www.raspberrypi.org/documentation/configuration/wireless/access-point.md
+# from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/168-raspberry-pi-hotspot-access-point-dhcpcd-method
+# ...and https://www.shellvoide.com/wifi/how-to-setup-captive-portal-login-with-rogue-ap-nginx/
+
 
 apt --yes install dnsmasq
 
@@ -11,17 +13,13 @@ service dnsmasq stop
 mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 
 echo "
-interface=wlan0      # Use the required wireless interface - usually wlan0
-listen-address=192.168.4.1
-no-hosts
-dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
-dhcp-option=option:router,192.168.4.1
-dhcp-authoritative
+#RPiHotspot config - No Internet
+interface=wlan0
+address=/#/192.168.50.10
+dhcp-option=3,192.168.50.10
+dhcp-option=6,192.168.50.10
+dhcp-range=192.168.50.150,192.168.50.200,255.255.255.0,12h
 
-address=/*/192.168.4.1
-no-resolv
-log-queries
-bind-interfaces
 " > /etc/dnsmasq.conf
 
 service dnsmasq restart
